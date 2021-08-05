@@ -8,9 +8,8 @@ const useForm = (initialState = {}) => {
       setValues(initialState)
     }
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setValues({ ...values, [name]:value })
+    const handleInputChange = ({ target }) => {
+        setValues({ ...values, [target.name]:target.value })
       };
 
       return [ values, handleInputChange, reset ]
